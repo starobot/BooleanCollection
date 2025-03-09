@@ -8,7 +8,7 @@ import java.nio.file.Files;
  */
 public class DiskBoolean {
     // the file that the value is stored.
-    private File handle;
+    private final File handle;
 
     /**
      * @param value the initial boolean value

@@ -8,5 +8,4 @@ public class Main {
         rogueBoolean.setValue(true);
         System.out.println(rogueBoolean);
     }
-
 }

@@ -13,7 +13,7 @@ public class OffHeapBoolean {
     private static final Unsafe UNSAFE = getUnsafe();
 
     // the address of the off-heap boolean
-    private final long address;
+    protected long address;
 
     /**
      * @param initialValue the initial boolean value
