@@ -36,7 +36,11 @@ public class UnsafeBoolean {
         // get the boolean value from the weak reference
         Boolean value = this.value.get();
         // assert the value is not null
-        if (value == null) throw new NullPointerException("Unsafe Boolean object has been garbage collected");
+        if (value == null) {
+            throw new NullPointerException("Unsafe Boolean object has been garbage collected");
+        }
+
         return value;
     }
+
 }

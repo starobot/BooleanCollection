@@ -1,5 +1,6 @@
 package bot.staro.booleans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author Edward E Stamper
  */
 public class MemoryLeakBoolean {
-    private List<Boolean> state;
+    private final List<Boolean> state = new ArrayList<>();
 
     /**
      * @param initialValue the initial boolean value
@@ -18,7 +19,6 @@ public class MemoryLeakBoolean {
 
     /**
      * Sets the new value of the boolean
-     * @param value
      */
     public void setValue(boolean value) {
         state.add(value);
@@ -31,4 +31,5 @@ public class MemoryLeakBoolean {
         int last = state.size() - 1;
         return state.get(last);
     }
+
 }
