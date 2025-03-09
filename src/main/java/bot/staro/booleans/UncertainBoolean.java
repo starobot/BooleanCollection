@@ -4,7 +4,7 @@ package bot.staro.booleans;
  * A boolean object that is uncertain about its own value.
  * @author St4ro.
  */
-public class UncertainBoolean {
+public final class UncertainBoolean {
     private boolean value;
 
     /**
