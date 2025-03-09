@@ -11,6 +11,7 @@ BooleanCollection is the ultimate library for those who have outgrown the tradit
 - 🔒 **ImmutableBoolean** – Set it once, regret it forever.
 - 🧬 **MutantBoolean** – It has two values. Which one wins? Who knows.
 - 🐱 **SchrödingerBoolean** – A boolean that is both `true` and `false` until observed.
+- 💾 DiskBoolean – A boolean that persists... even when you don't want it to.
 
 And more to come...
 
