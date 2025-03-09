@@ -7,17 +7,10 @@ package bot.staro.booleans;
 public final class UncertainBoolean {
     private boolean value;
 
-    /**
-     * Creates a new UncertainBoolean with the default value (false).
-     */
     public UncertainBoolean() {
         this(false);
     }
 
-    /**
-     * Creates a new UncertainBoolean with the specified value.
-     * @param value the initial value.
-     */
     public UncertainBoolean(boolean value) {
         this.value = value;
     }

@@ -11,18 +11,10 @@ public final class MutantBoolean {
     private boolean value;
     private boolean mutantValue;
 
-    /**
-     * Creates a new MutantBoolean with default values (false, false).
-     */
     public MutantBoolean() {
         this(false);
     }
 
-    /**
-     * Creates a new MutantBoolean with the specified value and default mutant value (false).
-     *
-     * @param value the normal value
-     */
     public MutantBoolean(boolean value) {
         this(value, false);
     }

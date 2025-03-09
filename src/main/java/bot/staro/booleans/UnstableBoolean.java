@@ -17,18 +17,10 @@ public final class UnstableBoolean {
     private boolean value;
     private volatile long lastUpdateTimestamp;
 
-    /**
-     * Creates a new UnstableBoolean with the default value (false).
-     */
     public UnstableBoolean() {
         this(false);
     }
 
-    /**
-     * Creates a new UnstableBoolean with the specified value.
-     *
-     * @param value the initial value
-     */
     public UnstableBoolean(boolean value) {
         this.value = value;
         resetTimestamp();
