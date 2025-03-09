@@ -206,4 +206,5 @@ public class RemoteProcessBoolean implements Closeable {
     public void close() {
         remoteProcess.destroy();
     }
+
 }
