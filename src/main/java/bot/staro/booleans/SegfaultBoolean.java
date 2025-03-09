@@ -16,4 +16,5 @@ public class SegfaultBoolean extends OffHeapBoolean {
         // set to an invalid address
         this.address = ThreadLocalRandom.current().nextInt();
     }
+
 }
