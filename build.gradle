@@ -9,9 +9,35 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    lwjglVersion = '3.3.3'
+    jomlVersion = "1.10.2"
+    lwjglNatives = "natives-windows"
+    lwjgl = ['lwjgl', 'lwjgl-glfw', 'lwjgl-opengl']
+}
+
 dependencies {
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
+
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-assimp"
+    implementation "org.lwjgl:lwjgl-glfw"
+    implementation "org.lwjgl:lwjgl-openal"
+    implementation "org.lwjgl:lwjgl-opengl"
+    implementation "org.lwjgl:lwjgl-stb"
+    implementation "org.lwjgl:lwjgl-tinyfd"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-assimp::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+    implementation "org.joml:joml:${jomlVersion}"
 }
 
 test {
