@@ -1,9 +1,10 @@
 package bot.staro.booleans;
 
 /**
- * A boolean wrapper with creepy behavior.
+ * A boolean object with creepy behavior.
  * This class stores a boolean value but behaves abnormally,
  * as the getValue method always returns false regardless of the actual value.
+ *
  * @author St4ro.
  */
 public final class CreepyBoolean {
