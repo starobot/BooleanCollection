@@ -46,4 +46,5 @@ public class ThreadLocalBoolean {
         return this.value.computeIfAbsent(
                 Thread.currentThread(), (t) -> false);
     }
+
 }
