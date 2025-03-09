@@ -12,8 +12,14 @@ BooleanCollection is the ultimate library for those who have outgrown the tradit
 - 🧬 **MutantBoolean** – It has two values. Which one wins? Who knows.
 - 🐱 **SchrödingerBoolean** – A boolean that is both `true` and `false` until observed.
 - 💾 DiskBoolean – A boolean that persists... even when you don't want it to.
+- 🎨 GraphicMemoryBoolean – A boolean stored in OpenGL memory. Yes, really.
+- 🧠 MemoryLeakBoolean – A boolean that never forgets. Literally.
+- ⚡ OptimizedMemoryLeakBoolean - A boolean that tries to forget, but doesn't really forget.
+- 🚀 OffHeapBoolean – A boolean stored outside the Java heap, because why not?
+- 🔄 ThreadLocalBoolean – A boolean that means something different in every thread.
+- ☢️ UnstableBoolean – The longer you wait, the more chaotic it become
 
-And more to come...
+And many many more...
 
 ## ⚠️ Warnings
 - Using **BigBoolean** may consume more memory than expected. Maybe **a lot** more.
