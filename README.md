@@ -17,7 +17,8 @@ BooleanCollection is the ultimate library for those who have outgrown the tradit
 - ⚡ OptimizedMemoryLeakBoolean - A boolean that tries to forget, but doesn't really forget.
 - 🚀 OffHeapBoolean – A boolean stored outside the Java heap, because why not?
 - 🔄 ThreadLocalBoolean – A boolean that means something different in every thread.
-- ☢️ UnstableBoolean – The longer you wait, the more chaotic it become
+- ☢️ UnstableBoolean – The longer you wait, the more chaotic it become.
+-🫀 SegfaultBoolean - Uses a funny memory adress to store the boolean.
 
 And many many more...
 
