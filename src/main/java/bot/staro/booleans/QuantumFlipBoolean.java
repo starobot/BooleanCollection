@@ -5,20 +5,13 @@ package bot.staro.booleans;
  *
  * @author St4ro.
  */
-public class QuantumFlipBoolean {
+public final class QuantumFlipBoolean {
     private boolean value;
 
-    /**
-     * Creates a default instance of QuantumFlipBoolean with the default value = false.
-     */
     public QuantumFlipBoolean() {
         this(false);
     }
 
-    /**
-     * Creates an instance of QuantumFlipBoolean.
-     * @param value the initial value.
-     */
     public QuantumFlipBoolean(boolean value) {
         this.value = value;
     }
@@ -39,6 +32,28 @@ public class QuantumFlipBoolean {
      */
     public void setValue(boolean value) {
         this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        QuantumFlipBoolean other = (QuantumFlipBoolean) obj;
+        return value == other.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return value ? 1231 : 1237;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
     }
 
 }

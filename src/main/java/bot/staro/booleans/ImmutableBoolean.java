@@ -10,18 +10,10 @@ package bot.staro.booleans;
 public final class ImmutableBoolean {
     private final boolean value;
 
-    /**
-     * Creates a new ImmutableBoolean with the default value (false).
-     */
     public ImmutableBoolean() {
         this(false);
     }
 
-    /**
-     * Creates a new ImmutableBoolean with the specified value.
-     *
-     * @param value the value
-     */
     public ImmutableBoolean(boolean value) {
         this.value = value;
     }

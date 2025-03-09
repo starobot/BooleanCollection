@@ -1,8 +1,12 @@
 package bot.staro;
 
+import bot.staro.booleans.RogueBoolean;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        RogueBoolean rogueBoolean = new RogueBoolean();
+        rogueBoolean.setValue(true);
+        System.out.println(rogueBoolean);
     }
 
 }
