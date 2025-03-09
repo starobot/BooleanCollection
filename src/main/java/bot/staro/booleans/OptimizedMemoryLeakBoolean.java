@@ -14,6 +14,10 @@ import java.util.List;
 public class OptimizedMemoryLeakBoolean {
     private final List<WeakReference<Boolean>> state = new ArrayList<>();
 
+    public OptimizedMemoryLeakBoolean() {
+        this(false);
+    }
+
     /**
      * @param initialValue the initial boolean value
      */

@@ -15,6 +15,10 @@ public class OffHeapBoolean {
     // the address of the off-heap boolean
     protected long address;
 
+    public OffHeapBoolean() {
+        this(false);
+    }
+
     /**
      * @param initialValue the initial boolean value
      */

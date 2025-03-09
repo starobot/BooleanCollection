@@ -29,6 +29,10 @@ public class RemoteProcessBoolean implements Closeable {
 
     private final Process remoteProcess;
 
+    public RemoteProcessBoolean() {
+        this(false);
+    }
+
     /**
      * Initialize a new RemoteProcessBoolean with the given default value,
      * also starts the new process

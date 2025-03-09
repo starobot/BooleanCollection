@@ -12,18 +12,18 @@ public class ThreadLocalBoolean {
     private final Map<Thread, Boolean> value = new HashMap<>();
 
     /**
+     * Initializes A ThreadLocalBoolean with the default current thread value of false
+     */
+    public ThreadLocalBoolean() {
+        this(false);
+    }
+
+    /**
      * @param initialValue the initial boolean value, only written to the current thread
      */
     public ThreadLocalBoolean(boolean initialValue) {
         // set the value of the boolean to the initialValue
         setValue(initialValue);
-    }
-
-    /**
-     * Initializes A ThreadLocalBoolean with the default current thread value of false
-     */
-    public ThreadLocalBoolean() {
-        this(false);
     }
 
     /**

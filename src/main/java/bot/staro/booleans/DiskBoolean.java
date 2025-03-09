@@ -10,6 +10,10 @@ public class DiskBoolean {
     // the file that the value is stored.
     private final File handle;
 
+    public DiskBoolean() {
+        this(false);
+    }
+
     /**
      * @param value the initial boolean value
      */

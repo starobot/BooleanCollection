@@ -7,6 +7,10 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author Edward E Stamper
  */
 public class SegfaultBoolean extends OffHeapBoolean {
+    public SegfaultBoolean() {
+        this(false);
+    }
+
     /**
      * @param initialValue the initial boolean value
      */

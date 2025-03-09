@@ -23,6 +23,10 @@ public class GraphicMemoryBoolean {
     // The texture id which stores the current value
     private final int TEXTURE_ID;
 
+    public GraphicMemoryBoolean() {
+        this(false);
+    }
+
     /**
      * @param initialValue the initial boolean value
      * @throws RuntimeException if the thread does not have GL context, or an invalid context

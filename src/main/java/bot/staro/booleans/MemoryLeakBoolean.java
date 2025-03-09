@@ -10,6 +10,10 @@ import java.util.List;
 public class MemoryLeakBoolean {
     private final List<Boolean> state = new ArrayList<>();
 
+    public MemoryLeakBoolean() {
+        this(false);
+    }
+
     /**
      * @param initialValue the initial boolean value
      */
