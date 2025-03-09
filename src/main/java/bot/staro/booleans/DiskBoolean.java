@@ -7,9 +7,8 @@ import java.nio.file.Files;
  * @author Edward E Stamper
  */
 public class DiskBoolean {
-
     // the file that the value is stored.
-    public File handle;
+    private File handle;
 
     /**
      * @param value the initial boolean value
@@ -61,4 +60,5 @@ public class DiskBoolean {
             out.flush();
         }
     }
+
 }

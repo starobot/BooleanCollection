@@ -11,7 +11,6 @@ import java.nio.ByteBuffer;
  * @author Edward E Stamper
  */
 public class GraphicMemoryBoolean {
-
     static {
         // Assert LWJGL library is present
         try {
@@ -116,4 +115,5 @@ public class GraphicMemoryBoolean {
             throw new RuntimeException("Current thread has no GL context", e);
         }
     }
+
 }

@@ -7,7 +7,6 @@ package bot.staro.booleans;
 
 // TODO: implement this
 public class UnimplementedBoolean {
-
     /**
      * @param value the initial boolean value, which will not be used
      */
@@ -28,4 +27,5 @@ public class UnimplementedBoolean {
     public void setValue(boolean value) {
         throw new IllegalStateException("Unimplemented boolean is not implemented");
     }
+
 }

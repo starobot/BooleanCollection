@@ -10,17 +10,17 @@ import java.lang.reflect.Field;
  */
 public class OffHeapBoolean {
     // The unsafe instance for reading/writing off-heap
-    private static Unsafe unsafe = getUnsafe();
+    private static final Unsafe UNSAFE = getUnsafe();
 
     // the address of the off-heap boolean
-    private long address;
+    private final long address;
 
     /**
      * @param initialValue the initial boolean value
      */
     public OffHeapBoolean(boolean initialValue) {
         // Allocate 1 byte of memory for the boolean
-        address = unsafe.allocateMemory(1);
+        address = UNSAFE.allocateMemory(1);
         // set the value of the boolean to the initialValue
         setValue(initialValue);
     }
@@ -31,7 +31,7 @@ public class OffHeapBoolean {
      */
     public void setValue(boolean value) {
         // write the byte representing true/false to the off heap memory
-        unsafe.putByte(address, (byte) (value ? 1 : 0));
+        UNSAFE.putByte(address, (byte) (value ? 1 : 0));
     }
 
     /**
@@ -41,7 +41,7 @@ public class OffHeapBoolean {
         // read the off heap memory
         // if it is 1, return true
         // otherwise, return false
-        return unsafe.getByte(address) == 1;
+        return UNSAFE.getByte(address) == 1;
     }
 
     /**
@@ -58,4 +58,5 @@ public class OffHeapBoolean {
             throw new RuntimeException("Unable to get Unsafe", e);
         }
     }
+
 }
