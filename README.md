@@ -19,6 +19,7 @@ BooleanCollection is the ultimate library for those who have outgrown the tradit
 - 🔄 **ThreadLocalBoolean** – A boolean that means something different in every thread.
 - ☢️ **UnstableBoolean** – The longer you wait, the more chaotic it become.
 - 🫀 **SegfaultBoolean** - Uses a funny memory adress to store the boolean.
+- 🎉 **HolidayBoolean** - A boolean that depends on holidays.
 
 And many many more...
 
