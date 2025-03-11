@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 public final class HolidayBoolean {
     @SuppressWarnings("unused")
     public void setValue(boolean value) {
-        throw new IllegalCallerException("You don't have the authority to change holidays.");
+        throw new IllegalAccessError("You don't have the authority to change holidays.");
     }
 
     public boolean getValue() {
