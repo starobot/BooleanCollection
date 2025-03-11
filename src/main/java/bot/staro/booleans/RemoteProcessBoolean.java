@@ -11,6 +11,7 @@ import java.util.zip.ZipEntry;
  * A Boolean object that is stored within another JVM process
  * The remote process can be killed by calling .close(),
  * or will be killed when the parent process is no longer running
+ *
  * @author Edward E Stamper
  */
 public class RemoteProcessBoolean implements Closeable {
@@ -29,6 +30,10 @@ public class RemoteProcessBoolean implements Closeable {
 
     private final Process remoteProcess;
 
+
+    /**
+     * Initialize a new RemoteProcessBoolean with a default value of false
+     */
     public RemoteProcessBoolean() {
         this(false);
     }
@@ -44,13 +49,15 @@ public class RemoteProcessBoolean implements Closeable {
 
         // get the current process ID so the remote process can know when to close
         String pid = String.valueOf(ProcessHandle.current().pid());
-        String command = getJavaExePath() + " -jar " + file + " " + pid;
-
-        System.out.println(command);
+        // java -jar booleanStorage.jar [pid]
+        String[] command = new String[]{
+                getJavaExePath(), "-jar", file, pid
+        };
 
         // spawn a new subprocess to host the boolean value
         try {
-            remoteProcess = Runtime.getRuntime().exec(command);
+            //remoteProcess = Runtime.getRuntime().exec(command);
+            remoteProcess = new ProcessBuilder(command).start();
         } catch (IOException e) {
             throw new RuntimeException("Could not create subprocess", e);
         }
@@ -61,6 +68,11 @@ public class RemoteProcessBoolean implements Closeable {
      * Writes the new value to the remote process
      */
     public void setValue(boolean defaultValue) {
+        // Assert the object has not been closed
+        if (!remoteProcess.isAlive()) {
+            throw new RuntimeException("RemoteProcessBoolean has been closed, cannot write.");
+        }
+
         // create an output stream to write to the remote process input stream
         try {
             DataOutputStream out = new DataOutputStream(remoteProcess.getOutputStream());
@@ -77,6 +89,11 @@ public class RemoteProcessBoolean implements Closeable {
      * Requests an update from the remote process and returns the provided boolean
      */
     public boolean getValue() {
+        // Assert the object has not been closed
+        if (!remoteProcess.isAlive()) {
+            throw new RuntimeException("RemoteProcessBoolean has been closed, cannot read.");
+        }
+
         boolean value = false;
         synchronized (this) {
             try {

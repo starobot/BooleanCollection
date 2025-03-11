@@ -33,7 +33,7 @@ public class GraphicMemoryBoolean {
      */
     public GraphicMemoryBoolean(boolean initialValue) {
         // assure current thread can use GL11
-        assertGLContext();
+        //assertGLContext();
 
         // allocate a new texture ID
         TEXTURE_ID = GL11.glGenTextures();
@@ -49,7 +49,7 @@ public class GraphicMemoryBoolean {
      */
     public void setValue(boolean newValue) {
         // assure current thread can use GL11
-        assertGLContext();
+        //assertGLContext();
 
         // Setup GL state for texture uploads
         setUpGLState();
@@ -75,7 +75,7 @@ public class GraphicMemoryBoolean {
      */
     public boolean getValue() {
         // assure current thread can use GL11
-        assertGLContext();
+        //assertGLContext();
 
         // Setup GL state for texture reading
         setUpGLState();

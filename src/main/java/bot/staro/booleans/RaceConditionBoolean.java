@@ -4,7 +4,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 
 /**
- * A boolean object that does the exact opposite of what you expect.
+ * A boolean object that executes async to intentionally
+ * cause race conditions & sync issues
  *
  * @author St4ro.
  */

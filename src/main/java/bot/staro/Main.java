@@ -1,17 +1,66 @@
 package bot.staro;
 
+import bot.staro.booleans.RemoteProcessBoolean;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class Main {
     private static final int ITERATIONS = 1_000_000;
     private static final int WARMUP = 100_000;
 
     public static void main(String[] args) {
+        String task = "";
+        // determine what task to task
+        // use provided arguments, or user input if none
+        if (args.length == 0) {
+            System.out.println("Enter a task to test: benchmark/remoteprocessboolean");
+            task = getInput();
+        } else {
+            task = args[0];
+        }
+
+        // Run the given task
+        switch (task.toLowerCase()) {
+            case "benchmark" -> {
+                benchmarkAll();
+                System.exit(0);
+            }
+            case "remoteprocessboolean" -> {
+                // test the remote process boolean
+                System.out.println("Creating remote process boolean...");
+                RemoteProcessBoolean remoteProcessBoolean = new RemoteProcessBoolean();
+                System.out.println("====================================");
+                System.out.println("Current value = " + remoteProcessBoolean.getValue());
+                System.out.println("Expects = false");
+
+                remoteProcessBoolean.setValue(true);
+                System.out.println("====================================");
+                System.out.println("Current value = " + remoteProcessBoolean.getValue());
+                System.out.println("Expects = true");
+
+                System.exit(0);
+            }
+            default -> {
+                System.out.println("No tasks to run.");
+                System.exit(0);
+            }
+        }
+    }
+
+    /**
+     * @return the line provided by console input
+     */
+    private static String getInput() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    /**
+     * Runs a benchmark on (most) of the booleans
+     */
+    private static void benchmarkAll() {
         benchmark("java.lang.Boolean", "TRUE", 1000);
         benchmark("bot.staro.booleans.UnstableBoolean", null, 1000);
         benchmark("bot.staro.booleans.UncertainBoolean", null, 1000);
@@ -25,7 +74,6 @@ public final class Main {
         benchmark("bot.staro.booleans.RogueBoolean", null, 1000);
         benchmark("bot.staro.booleans.QuantumFlipBoolean", null, 1000);
         benchmark("bot.staro.booleans.OptimizedMemoryLeakBoolean", null, 1000);
-        //benchmark("bot.staro.booleans.GraphicMemoryBoolean", null, 1000);
     }
 
     /**
