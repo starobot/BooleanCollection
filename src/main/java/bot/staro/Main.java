@@ -74,6 +74,7 @@ public final class Main {
         benchmark("bot.staro.booleans.RogueBoolean", null, 1000);
         benchmark("bot.staro.booleans.QuantumFlipBoolean", null, 1000);
         benchmark("bot.staro.booleans.OptimizedMemoryLeakBoolean", null, 1000);
+        benchmark("bot.staro.booleans.HolidayBoolean", null, 1000);
     }
 
     /**
