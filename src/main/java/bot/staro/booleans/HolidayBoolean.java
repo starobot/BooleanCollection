@@ -42,7 +42,8 @@ public final class HolidayBoolean {
         LABOR_DAY(simple(5, 1)),
         RUSSIA_DAY(simple(6, 12)),
         NATIONAL_UNITY_DAY(simple(11, 4)),
-        CATHOLIC_CHRISTMAS(doubled(12, 24, 12, 25));
+        CATHOLIC_CHRISTMAS(doubled(12, 24, 12, 25)),
+        NOT_RUSSIA_DAY(simple(8, 24));
 
         private final Predicate<LocalDateTime> date;
 
